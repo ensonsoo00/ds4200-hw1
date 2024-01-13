@@ -1,40 +1,36 @@
 
+let imageButton = document.getElementById("switch_img");
+
 const myImage = document.querySelector("img");
-myImage.onclick = () => {
+imageButton.onclick = () => {
     const mySrc = myImage.getAttribute("src");
-    if (mySrc === "images/firefox-icon.png") {
-        myImage.setAttribute("src", "images/firefox2.png");
+    if (mySrc === "images/neu2.jpg") {
+        myImage.setAttribute("src", "images/neu.png");
     }
     else {
-        myImage.setAttribute("src", "images/firefox-icon.png")
+        myImage.setAttribute("src", "images/neu2.jpg");
     }
 }
 
 
-let myButton = document.querySelector("button");
-let myHeading = document.querySelector("h1");
+let userButton = document.getElementById("change_user");
 
-function setUserName() {
-    const myName = prompt("Please enter your name.");
-    if (!myName) {
-        setUserName();
+function greetUser() {
+    const userName = prompt("Please enter your name.");
+    // if user clicks "Ok" without entering a name, re-prompt the user
+    if (userName === "") {
+        greetUser();
+    }
+    // if user clicks "Cancel", exit the function
+    else if (userName === null) {
+        return;
     }
     else {
-        localStorage.setItem("name", myName);
-        myHeading.textContent = `Mozilla is cool, ${myName}`;
+        alert(`Hi ${userName}, nice to meet you!`)
     }
-
 }
 
-if (!localStorage.getItem("name")) {
-    setUserName();
-}
-else {
-    const storedName = localStorage.getItem("name");
-    myHeading.textContent = `Mozilla is cool, ${storedName}`;
-}
-
-myButton.onclick = () => {
-    setUserName();
+userButton.onclick = () => {
+    greetUser();
 };
 
