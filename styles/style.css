@@ -32,9 +32,9 @@ body {
 
 img {
     display: block;
-    margin: 0 auto;
-    height: 250px;
-    width: 250px;
+    margin: 10px auto;
+    height: 300px;
+    width: 500px;
 }
 
 .switch-img {

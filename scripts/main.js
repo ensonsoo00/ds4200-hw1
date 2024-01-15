@@ -1,14 +1,14 @@
 
 let imageButton = document.getElementById("switch_img");
 
-const myImage = document.querySelector("img");
+const myImage = document.getElementById("neu_img");
 imageButton.onclick = () => {
     const mySrc = myImage.getAttribute("src");
-    if (mySrc === "images/neu2.jpg") {
-        myImage.setAttribute("src", "images/neu.png");
+    if (mySrc === "images/neu2.png") {
+        myImage.setAttribute("src", "images/neu.jpg");
     }
     else {
-        myImage.setAttribute("src", "images/neu2.jpg");
+        myImage.setAttribute("src", "images/neu2.png");
     }
 }
 
